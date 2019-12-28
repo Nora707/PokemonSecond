@@ -1,7 +1,6 @@
 package com.example.pokemonsecond
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -9,36 +8,54 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
+import com.example.pokemonsecond.model.Pokemon
+import com.example.pokemonsecond.model.Type
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.poke_finder.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.poke_finder)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        val dm = HashMap<Int, Pokemon>()
+        dm.set(1, Pokemon("Pichu", "Kanto", 500, arrayOf(Type.FIGHTING), arrayOf(Type.FIRE)))
+        dm.set(2, Pokemon("Ditto", "Jonto", 800, arrayOf(Type.WATER), arrayOf(Type.NORMAL)))
+        dm.set(3, Pokemon("Eevee", "Hoen", 1200, arrayOf(Type.FIRE), arrayOf(Type.FIRE)))
+        val adapter = ArrayAdapter<Pokemon>(
+            this,
+            android.R.layout.simple_spinner_item,
+            dm.values.toList()
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        pokeFinderSpinner.adapter =adapter
 
         val toggle = ActionBarDrawerToggle(
-            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this,
+            drawer_layout,
+            toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
+//        print(toggle.toString())
+//        drawer_layout.addDrawerListener(toggle)
+//        toggle.syncState()
 
-        nav_view.setNavigationItemSelectedListener(this)
+//        nav_view.setNavigationItemSelectedListener(this)
     }
 
     public fun forGymBattleButton(view: View) {
         println("gym battle button has been clicked");
     }
+
     public fun forRaidButton(view: View) {
         println("gym battle button has been clicked");
     }
+
     public fun bestDefendersButton(view: View) {
         println("gym battle button has been clicked");
     }
