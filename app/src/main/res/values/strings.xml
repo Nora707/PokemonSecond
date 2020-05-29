@@ -6,4 +6,12 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="button_text_for_gym">For gym attacking</string>
+    <string name="button_text_for_raid">For raid</string>
+    <string name="button_text_for_duel">For duel</string>
+    <string name="button_text_for_defender">Best defenders</string>
+    <string name="opponent_selector_gym">What pokemons does the gym has?</string>
+    <string name="opponent_selector_raid">What Pokemon is the raid against?</string>
+    <string name="opponent_selector_duel">What types does the opponent has?</string>
+    <string name="button_text_for_duel2">test</string>
 </resources>

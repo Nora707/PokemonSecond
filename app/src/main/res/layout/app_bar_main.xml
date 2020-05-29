@@ -21,6 +21,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/choosing_menu"/>
+    <include layout="@layout/purpose_menu"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
