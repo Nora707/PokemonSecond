@@ -19,28 +19,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.poke_finder)
+        setContentView(R.layout.app_bar_main)
         setSupportActionBar(toolbar)
 
-        val dm = HashMap<Int, Pokemon>()
-        dm.set(1, Pokemon("Pichu", "Kanto", 500, arrayOf(Type.FIGHTING), arrayOf(Type.FIRE)))
-        dm.set(2, Pokemon("Ditto", "Jonto", 800, arrayOf(Type.WATER), arrayOf(Type.NORMAL)))
-        dm.set(3, Pokemon("Eevee", "Hoen", 1200, arrayOf(Type.FIRE), arrayOf(Type.FIRE)))
-        val adapter = ArrayAdapter<Pokemon>(
-            this,
-            android.R.layout.simple_spinner_item,
-            dm.values.toList()
-        )
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        pokeFinderSpinner.adapter =adapter
+//        val dm = HashMap<Int, Pokemon>()
+//        dm.set(1, Pokemon("Pichu", "Kanto", 500, arrayOf(Type.FIGHTING), arrayOf(Type.FIRE)))
+//        dm.set(2, Pokemon("Ditto", "Jonto", 800, arrayOf(Type.WATER), arrayOf(Type.NORMAL)))
+//        dm.set(3, Pokemon("Eevee", "Hoen", 1200, arrayOf(Type.FIRE), arrayOf(Type.FIRE)))
+//        val adapter = ArrayAdapter<Pokemon>(
+//            this,
+//            android.R.layout.simple_spinner_item,
+//            dm.values.toList()
+//        )
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        pokeFinderSpinner.adapter =adapter
 
-        val toggle = ActionBarDrawerToggle(
-            this,
-            drawer_layout,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
+//        val toggle = ActionBarDrawerToggle(
+//            this,
+//            drawer_layout,
+//            toolbar,
+//            R.string.navigation_drawer_open,
+//            R.string.navigation_drawer_close
+//        )
 //        print(toggle.toString())
 //        drawer_layout.addDrawerListener(toggle)
 //        toggle.syncState()
@@ -50,14 +50,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     public fun forGymBattleButton(view: View) {
         println("gym battle button has been clicked");
+        setContentView(R.layout.opponent_selector)
     }
 
     public fun forRaidButton(view: View) {
-        println("gym battle button has been clicked");
+        println("raid battle button has been clicked");
+    }
+    public fun forDuelButton(view: View) {
+        println("duel battle button has been clicked");
     }
 
     public fun bestDefendersButton(view: View) {
-        println("gym battle button has been clicked");
+        println("defender button has been clicked");
     }
 
     override fun onBackPressed() {

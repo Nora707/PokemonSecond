@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+            name="pokemon_names">
+        <item
+        >text_string</item>
+    </string-array>
+    <string-array
+            name="pokemon_types">
+        <item
+        >text_string</item>
+    </string-array>
+
+</resources>

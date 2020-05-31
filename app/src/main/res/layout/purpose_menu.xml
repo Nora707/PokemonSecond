@@ -39,7 +39,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:onClick="forRaidButton"
+            android:onClick="forDuelButton"
             android:text="@string/button_text_for_duel"/>
 
     <Button
